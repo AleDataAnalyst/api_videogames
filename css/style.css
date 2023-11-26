@@ -279,13 +279,13 @@ footer {
 @media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait), only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   h1 {
     font-weight: 700;
-    font-size: 3em;
+    font-size: 2em;
     margin-bottom: 16px;
   }
   h2 {
     color: #FA7C1F;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-bottom: 16px;
   }
   /* Nav */
@@ -293,7 +293,7 @@ footer {
     background-color: #FFF;
     color: #011111;
     font-family: "Outfit", sans-serif;
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 16px;
     text-align: center;
     width: 100vw;
@@ -311,7 +311,7 @@ footer {
   nav a {
     color: #011111;
     font-family: "Outfit", sans-serif;
-    font-size: 1.1em;
+    font-size: 1em;
     margin: 0px 16px;
     text-decoration: none;
   }

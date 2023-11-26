@@ -23,6 +23,7 @@ $border-radius-s: 16px;
 
 // Fuentes
 $outfit-font: 'Outfit', sans-serif;
+// Pesos de Fuentes
 $fnt-w-light: 100;
 $fnt-w-reg: 400;
 $fnt-w-bold: 700;
@@ -34,6 +35,13 @@ $fnt-sz-m: 1.5em;
 $fnt-sz-normal: 1.1em;
 $fnt-sz-small: .8em;
 $fnt-sz-xsmall: .6em;
+// Tamaños de Fuentes para Móvil
+$mb-fnt-sz-xl: 2.5em;
+$mb-fnt-sz-l: 2em;
+$mb-fnt-sz-m: 1.2em;
+$mb-fnt-sz-normal: 1em;
+$mb-fnt-sz-small: .6em;
+$mb-fnt-sz-xsmall: .5em;
 
 // Márgenes
 $marg-0: 0px;
@@ -346,14 +354,14 @@ only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-we
     // Estilos iPad Pro 11 debajo
     h1 {
         font-weight: $fnt-w-bold;
-        font-size: $fnt-sz-l;
+        font-size: $mb-fnt-sz-l;
         margin-bottom: $marg-s;
     }
     
     h2 {
         color: $orange;
         font-weight: $fnt-w-bold;
-        font-size: $fnt-sz-m;
+        font-size: $mb-fnt-sz-m;
         margin-bottom: $marg-s;
     }
 
@@ -362,7 +370,7 @@ only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-we
         background-color: $white;
         color: $black;
         font-family: $outfit-font;
-        font-size: $fnt-sz-normal;
+        font-size: $mb-fnt-sz-normal;
         padding: $pad-s;
         text-align: center;
         // top: 155px;
@@ -383,7 +391,7 @@ only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-we
     nav a {
         color: $nav-a;
         font-family: $outfit-font;
-        font-size: $fnt-sz-normal;
+        font-size: $mb-fnt-sz-normal;
         margin: $marg-0 $marg-s;
         text-decoration: none;
     }
