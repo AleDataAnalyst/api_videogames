@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Juegos</title>
+    <style>
+        .result-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .game-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Búsqueda de Juegos</h1>
+
+<!-- Filtro de Búsqueda -->
+<input type="text" id="searchInput" placeholder="Buscar por nombre...">
+<button onclick="buscarJuegos()">Buscar</button>
+
+<!-- Contenedor de Resultados -->
+<div id="resultContainer" class="result-container"></div>
+
+<script>
+    const apiKey = 'TU_CLAVE_DE_API';
+
+    function buscarJuegos() {
+        const searchInput = document.getElementById('searchInput').value;
+        const url = `https://api.rawg.io/api/games?key=${apiKey}&search=${searchInput}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => mostrarResultados(data.results))
+            .catch(error => console.error('Error:', error));
+    }
+
+    function mostrarResultados(resultados) {
+        const resultContainer = document.getElementById('resultContainer');
+        resultContainer.innerHTML = '';
+
+        resultados.forEach(juego => {
+            const card = document.createElement('div');
+            card.classList.add('game-card');
+            card.innerHTML = `<h3>${juego.name}</h3>
+                              <p>Plataforma: ${juego.platforms.map(platform => platform.platform.name).join(', ')}</p>
+                              <p>Géneros: ${juego.genres.map(genre => genre.name).join(', ')}</p>
+                              <p>Desarrollador: ${juego.developers.map(developer => developer.name).join(', ')}</p>`;
+
+            resultContainer.appendChild(card);
+        });
+    }
+</script>
+
+</body>
+</html>

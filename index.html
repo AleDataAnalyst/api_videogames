@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameformer: Explorador de Juegos con la API RAWG</title>
+    <!-- Incluir jQuery desde el CDN de Google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Google Fonts Outfit -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="navbar-container">
+            <img src="./img/LogoGameformer1x.svg" class="navbar-logo">
+            <div class="nav-titles">
+                <a href="#inicio">Inicio</a>
+                <a href="#buscador">Buscador</a>
+                <a href="#contacto">Contacto</a>
+                <div class="navbar-categories">
+                    <a href="#categorias">Categorías</a>
+                    <div class="navbar-categories-content">
+                    <a href="#juegos">Juegos</a>
+                    <a href="#generos">Géneros</a>
+                    <a href="#plataformas">Plataformas</a>
+                    <a href="#editores">Editores</a>
+                    <a href="#creadores">Creadores</a>
+                </div>
+            </div>
+            <div class="nav-search"><img src="./img/ic-search.svg" alt=""></div>
+            <button>Registro</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+
+            <!-- Buscador de Juegos -->
+            <section id="buscar" class="search-bar">
+                <h1>Buscador de Juegos</h1>
+                <h2>A partir de la API RAWG</h2>
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre de juego">
+                <button class="button" onclick="buscarJuegos()">Buscar</button>
+            </section>
+        
+            <!-- Contenedor de Resultados -->
+            <section id="resultContainer" class="result-container"></section>
+        
+            <!-- Slider de Categorías -->
+            <section class="category-slider">
+                <h3>Información de Juegos</h3>
+                <div id="juegos" class="category-card" onclick="filtrarPorJuegos('games')">Juegos</div>
+                <h3>Información de Géneros</h3>
+                <div id="generos" class="category-card" onclick="filtrarPorGeneros('genres')">Géneros</div>
+                <h3>Información de Plataformas</h3>
+                <div id="plataformas" class="category-card" onclick="filtrarPorPlataformas('platforms')">Plataformas</div>
+                <h3>Información de Editores</h3>
+                <div id="editores" class="category-card" onclick="filtrarPorEditores('publishers')">Editoriales</div>
+                <h3>Información de Creadores</h3>
+                <div id="creadores" class="category-card" onclick="filtrarPorCreadores('creators')">Creadores</div>
+                <h3>Información de Desarrolladores</h3>
+                <div id="creadores" class="category-card" onclick="filtrarPorDesarrolladores('creators')">Creadores</div>
+            </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>Contacto</h5>
+                <p>Correo: info@example.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h5>Redes Sociales</h5>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-section">
+                <h5>Enlaces útiles</h5>
+                <a href="#">Términos de servicio</a>
+                <a href="#">Política de privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

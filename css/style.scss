@@ -1,0 +1,465 @@
+// Variables
+
+// Colores
+$blue: #003CD7;
+$black: #011111;
+$orange: #FA7C1F;
+$white: #FFF;
+$softgray: #EFEFEF;
+$gray: #5E5E5E;
+
+// Colores Enlaces Nav
+$nav-a: #011111;
+$nav-a-hvr: #003CD7;
+$nav-a-focus: #FA7C1F;
+$nav-a-active: #003CD7;
+$nav-a-visited: #5E5E5E;
+
+// Radio
+$border-radius-xl: 100px;
+$border-radius-l: 80px;
+$border-radius-m: 64px;
+$border-radius-s: 16px;
+
+// Fuentes
+$outfit-font: 'Outfit', sans-serif;
+$fnt-w-light: 100;
+$fnt-w-reg: 400;
+$fnt-w-bold: 700;
+$fnt-w-xb: 900;
+// Tamaños de Fuentes
+$fnt-sz-xl: 4em;
+$fnt-sz-l: 3em;
+$fnt-sz-m: 1.5em;
+$fnt-sz-normal: 1.1em;
+$fnt-sz-small: .8em;
+$fnt-sz-xsmall: .6em;
+
+// Márgenes
+$marg-0: 0px;
+$marg-xl: 40px;
+$marg-l: 32px;
+$marg-m: 24px;
+$marg-s: 16px;
+$marg-xs: 8px;
+
+// Paddings
+$pad-0: 0px;
+$pad-xl: 40px;
+$pad-l: 32px;
+$pad-m: 24px;
+$pad-s: 16px;
+$pad-xs: 8px;
+
+// Gap
+$gap-xl: 80px;
+$gap-l: 64px;
+$gap-m: 32px;
+$gap-s: 24px;
+$gap-xs: 16px;
+
+// Estilos Generales
+body {
+    background-color: $black;
+    box-sizing: border-box;
+    font-family: $outfit-font;
+    margin: $marg-0;
+}
+
+/* Estilos de textos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $outfit-font;
+}
+
+h1 {
+    color: $blue;
+    font-weight: $fnt-w-xb;
+    font-size: $fnt-sz-xl;
+    margin-bottom: $marg-s;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+h2 {
+    color: $orange;
+    font-weight: $fnt-w-bold;
+    font-size: $fnt-sz-l;
+    line-height: 1em;
+    margin-bottom: $marg-s;
+    text-align: center;
+}
+
+h3 {
+    color: $white;
+    font-weight: $fnt-w-bold;
+    font-size: $fnt-sz-l;
+}
+
+h4 {
+    color: $orange;
+    font-weight: $fnt-w-reg;
+    font-size: $fnt-sz-m;
+}
+
+h5 {
+    color: $orange;
+    font-weight: $fnt-w-reg;
+    font-size: $fnt-sz-m;
+}
+
+h6 {
+    color: $white;
+    font-weight: $fnt-w-light;
+    font-size: $fnt-sz-normal;
+}
+
+p {
+    font-family: $outfit-font;
+    color: $white;
+    font-weight: $fnt-w-reg;
+    font-size: $fnt-sz-normal;
+    margin-bottom: $marg-s;
+}
+
+/* Nav */
+nav {
+    background-color: $white;
+    color: $black;
+    font-family: $outfit-font;
+    font-size: $fnt-sz-normal;
+    padding: $pad-s;
+    text-align: center;
+    // top: 155px;
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar-logo {
+    width: 120px;
+    padding: 2%;
+}
+
+nav a {
+    color: $nav-a;
+    font-family: $outfit-font;
+    font-size: $fnt-sz-normal;
+    margin: $marg-0 $marg-s;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: $nav-a-hvr;
+}
+
+nav a:focus {
+    color: $nav-a-focus;
+}
+
+nav a:active {
+    color: $nav-a-active;
+}
+
+nav a:active {
+    color: $nav-a-visited;
+}
+
+.nav-titles {
+    padding: $pad-0 $pad-s $pad-0 $pad-0;
+    gap: $gap-l;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-search {
+    border-radius: $border-radius-xl;
+    background: $softgray;
+    margin: $marg-s;
+    padding: $pad-s;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.nav-search_ext {
+    border-radius: $border-radius-xl;
+    background: $softgray;
+    width: 252px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar-categories {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-categories-content {
+    background-color: $gray;
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.navbar-categories-content a {
+    color: $white;
+    padding: $pad-s;
+    display: block;
+    text-decoration: none;
+}
+
+.navbar-categories:hover .navbar-categories-content {
+    display: block;
+}
+
+main {
+    max-width: 80vw;
+    margin: $marg-m auto;
+    padding: $pad-m;
+}
+
+.search-bar {
+    margin-bottom: $marg-s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    gap: $gap-s;
+}
+
+.search-input {
+    background: $softgray;
+    border-radius: $border-radius-xl;
+    color: $blue;
+    font-size: $fnt-sz-normal;
+    margin: $marg-s;
+    padding: $pad-s;
+    width: 50vw;
+    height: 40px;
+}
+
+nav button {
+    font-size: $fnt-sz-normal;
+    padding: $pad-m;
+    min-width: 10vw;
+    width: min-content;
+}
+
+button {
+    background: $blue;
+    border-radius: $border-radius-xl;
+    color: $white;
+    font-family: $outfit-font;
+    font-weight: $fnt-w-bold;
+    font-size: $fnt-sz-normal;
+    padding: $pad-m;
+    border: none;
+    cursor: pointer;
+    min-width: 20vw;
+    width: min-content;
+}
+
+.category-slider {
+    margin-bottom: $marg-m;
+    padding: $pad-m;
+}
+
+.result-container {
+    background-color: $softgray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    gap: $gap-m;
+}
+
+.category-slider {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $marg-m;
+}
+
+.category-card {
+    background-color: $softgray;
+    // border: 1px solid $softgray;
+    border-radius: $border-radius-m;
+    margin: $marg-s;
+    padding: $pad-s;
+}
+
+/* Footer */
+footer {
+    background-color: $gray;
+    color: $white;
+    padding: $pad-s $pad-0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section {
+    max-width: 30vw;
+}
+
+.footer-section h5 {
+    font-size: $fnt-sz-normal;
+    margin-bottom: $marg-s;
+}
+
+.footer-section a {
+    display: block;
+    color: $white;
+    text-decoration: none;
+    margin-bottom: $marg-s;
+}
+
+// Media Query iPad Pro 11
+@media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait),
+only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+
+    // Estilos iPad Pro 11 debajo
+    h1 {
+        font-weight: $fnt-w-bold;
+        font-size: $fnt-sz-l;
+        margin-bottom: $marg-s;
+    }
+    
+    h2 {
+        color: $orange;
+        font-weight: $fnt-w-bold;
+        font-size: $fnt-sz-m;
+        margin-bottom: $marg-s;
+    }
+
+    /* Nav */
+    nav {
+        background-color: $white;
+        color: $black;
+        font-family: $outfit-font;
+        font-size: $fnt-sz-normal;
+        padding: $pad-s;
+        text-align: center;
+        // top: 155px;
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .navbar-logo {
+        width: 20vw;
+        padding: 2%;
+    }
+
+    nav a {
+        color: $nav-a;
+        font-family: $outfit-font;
+        font-size: $fnt-sz-normal;
+        margin: $marg-0 $marg-s;
+        text-decoration: none;
+    }
+
+    .nav-titles {
+        padding: $pad-0 $pad-s;
+        gap: $gap-s;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-search {
+        border-radius: $border-radius-xl;
+        background: $softgray;
+        margin: $marg-s;
+        padding: $pad-s;
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+    }
+
+    .nav-search_ext {
+        border-radius: $border-radius-xl;
+        background: $softgray;
+        width: 252px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-categories {
+        position: relative;
+        display: inline-block;
+    }
+
+    .navbar-categories-content {
+        background-color: $gray;
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 80vw;
+        z-index: 1;
+    }
+
+    .navbar-categories-content a {
+        color: $white;
+        padding: $pad-s;
+        display: block;
+        text-decoration: none;
+    }
+
+    .navbar-categories:hover .navbar-categories-content {
+        display: block;
+    }
+
+    main {
+        max-width: 80vh;
+        margin: $marg-m auto;
+        padding: $pad-m;
+    }
+}
+
+// Media Query iPhone 13
+@media only screen and (min-device-width: 390px) and (max-device-width: 390px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait),
+only screen and (min-device-width: 844px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    // Estilos iPhone 13 debajo
+
+}
