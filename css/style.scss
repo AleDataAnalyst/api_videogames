@@ -1,19 +1,19 @@
 // Variables
 
 // Colores
-$blue: #003CD7;
-$black: #011111;
-$orange: #FA7C1F;
-$white: #FFF;
-$softgray: #EFEFEF;
-$gray: #5E5E5E;
+// $blue: #003CD7;
+// $black: #011111;
+// $orange: #FA7C1F;
+// $white: #FFF;
+// $softgray: #EFEFEF;
+// $gray: #5E5E5E;
 
 // Colores Enlaces Nav
-$nav-a: #011111;
-$nav-a-hvr: #003CD7;
-$nav-a-focus: #FA7C1F;
-$nav-a-active: #003CD7;
-$nav-a-visited: #5E5E5E;
+// $nav-a: #011111;
+// $nav-a-hvr: #003CD7;
+// $nav-a-focus: #FA7C1F;
+// $nav-a-active: #003CD7;
+// $nav-a-visited: #5E5E5E;
 
 // Radio
 $border-radius-xl: 100px;
@@ -23,48 +23,49 @@ $border-radius-s: 16px;
 
 // Fuentes
 $outfit-font: 'Outfit', sans-serif;
+
 // Pesos de Fuentes
-$fnt-w-light: 100;
-$fnt-w-reg: 400;
-$fnt-w-bold: 700;
-$fnt-w-xb: 900;
+// $fnt-w-light: 100;
+// $fnt-w-reg: 400;
+// $fnt-w-bold: 700;
+// $fnt-w-xb: 900;
 // Tamaños de Fuentes
-$fnt-sz-xl: 4em;
-$fnt-sz-l: 3em;
-$fnt-sz-m: 1.5em;
-$fnt-sz-normal: 1.1em;
-$fnt-sz-small: .8em;
-$fnt-sz-xsmall: .6em;
+// $fnt-sz-xl: 4em;
+// $fnt-sz-l: 3em;
+// $fnt-sz-m: 1.5em;
+// $fnt-sz-normal: 1.1em;
+// $fnt-sz-small: .8em;
+// $fnt-sz-xsmall: .6em;
 // Tamaños de Fuentes para Móvil
-$mb-fnt-sz-xl: 2.5em;
-$mb-fnt-sz-l: 2em;
-$mb-fnt-sz-m: 1.2em;
-$mb-fnt-sz-normal: 1em;
-$mb-fnt-sz-small: .6em;
-$mb-fnt-sz-xsmall: .5em;
+// $mb-fnt-sz-xl: 2.5em;
+// $mb-fnt-sz-l: 2em;
+// $mb-fnt-sz-m: 1.2em;
+// $mb-fnt-sz-normal: 1em;
+// $mb-fnt-sz-small: .6em;
+// $mb-fnt-sz-xsmall: .5em;
 
 // Márgenes
-$marg-0: 0px;
-$marg-xl: 40px;
-$marg-l: 32px;
-$marg-m: 24px;
-$marg-s: 16px;
-$marg-xs: 8px;
+// $marg-0: 0px;
+// $marg-xl: 40px;
+// $marg-l: 32px;
+// $marg-m: 24px;
+// $marg-s: 16px;
+// $marg-xs: 8px;
 
 // Paddings
-$pad-0: 0px;
-$pad-xl: 40px;
-$pad-l: 32px;
-$pad-m: 24px;
-$pad-s: 16px;
-$pad-xs: 8px;
+// $pad-0: 0px;
+// $pad-xl: 40px;
+// $pad-l: 32px;
+// $pad-m: 24px;
+// $pad-s: 16px;
+// $pad-xs: 8px;
 
 // Gap
-$gap-xl: 80px;
-$gap-l: 64px;
-$gap-m: 32px;
-$gap-s: 24px;
-$gap-xs: 16px;
+// $gap-xl: 80px;
+// $gap-l: 64px;
+// $gap-m: 32px;
+// $gap-s: 24px;
+// $gap-xs: 16px;
 
 // Estilos Generales
 body {
@@ -242,22 +243,22 @@ nav a:active {
     display: block;
 }
 
-main {
-    max-width: 80vw;
-    margin: $marg-m auto;
-    padding: $pad-m;
-}
+// main {
+//     max-width: 80vw;
+//     margin: $marg-m auto;
+//     padding: $pad-m;
+// }
 
-.search-bar {
-    margin-bottom: $marg-s;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-around;
-    gap: $gap-s;
-}
+// .search-bar {
+//     margin-bottom: $marg-s;
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     flex-wrap: nowrap;
+//     align-content: center;
+//     justify-content: space-around;
+//     gap: $gap-s;
+// }
 
 .search-input {
     background: $softgray;

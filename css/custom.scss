@@ -1,0 +1,25 @@
+// custom.scss
+
+// Importar Bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Sobrescribe variables de Bootstrap
+
+//Colores
+$primary: #003CD7;
+$secondary: #FA7C1F;
+$success: #5E5E5E;
+$info: #EFEFEF;
+$light: #FFF;
+$dark: #011111;
+
+// Botones
+$btn-primary: #003CD7;
+$btn-secondary: #FA7C1F;
+$btn-success: #5E5E5E;
+$btn-info: #EFEFEF;
+$btn-light: #FFF;
+$btn-dark: #011111;
+
+// Compilar Bootstrap con las nuevas variables
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
