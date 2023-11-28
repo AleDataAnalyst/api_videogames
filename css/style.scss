@@ -1,78 +1,53 @@
 // Variables
 
 // Colores
-// $blue: #003CD7;
-// $black: #011111;
-// $orange: #FA7C1F;
-// $white: #FFF;
-// $softgray: #EFEFEF;
-// $gray: #5E5E5E;
+$blue: #003CD7;
+$black: #212b33;
+$orange: #FA7C1F;
+$white: #FFF;
+$softgray: #EFEFEF;
+$gray: #5E5E5E;
 
 // Colores Enlaces Nav
-// $nav-a: #011111;
-// $nav-a-hvr: #003CD7;
-// $nav-a-focus: #FA7C1F;
-// $nav-a-active: #003CD7;
-// $nav-a-visited: #5E5E5E;
+$nav-a: #212b33;
+$nav-a-hvr: #003CD7;
+$nav-a-focus: #FA7C1F;
+$nav-a-active: #003CD7;
+$nav-a-visited: #5E5E5E;
 
 // Radio
-$border-radius-xl: 100px;
-$border-radius-l: 80px;
-$border-radius-m: 64px;
-$border-radius-s: 16px;
+$radius-xl: 100px;
+$radius-l: 80px;
+$radius-m: 64px;
+$radius-s: 16px;
 
 // Fuentes
 $outfit-font: 'Outfit', sans-serif;
-
 // Pesos de Fuentes
-// $fnt-w-light: 100;
-// $fnt-w-reg: 400;
-// $fnt-w-bold: 700;
-// $fnt-w-xb: 900;
+$fnt-w-light: 100;
+$fnt-w-reg: 400;
+$fnt-w-bold: 700;
+$fnt-w-xb: 900;
 // Tamaños de Fuentes
-// $fnt-sz-xl: 4em;
-// $fnt-sz-l: 3em;
-// $fnt-sz-m: 1.5em;
-// $fnt-sz-normal: 1.1em;
-// $fnt-sz-small: .8em;
-// $fnt-sz-xsmall: .6em;
+$fnt-sz-xl: 3.6em;
+$fnt-sz-l: 2.5em;
+$fnt-sz-m: 1.5em;
+$fnt-sz-normal: 1.1em;
+$fnt-sz-small: .8em;
+$fnt-sz-xsmall: .6em;
 // Tamaños de Fuentes para Móvil
-// $mb-fnt-sz-xl: 2.5em;
-// $mb-fnt-sz-l: 2em;
-// $mb-fnt-sz-m: 1.2em;
-// $mb-fnt-sz-normal: 1em;
-// $mb-fnt-sz-small: .6em;
-// $mb-fnt-sz-xsmall: .5em;
-
-// Márgenes
-// $marg-0: 0px;
-// $marg-xl: 40px;
-// $marg-l: 32px;
-// $marg-m: 24px;
-// $marg-s: 16px;
-// $marg-xs: 8px;
-
-// Paddings
-// $pad-0: 0px;
-// $pad-xl: 40px;
-// $pad-l: 32px;
-// $pad-m: 24px;
-// $pad-s: 16px;
-// $pad-xs: 8px;
-
-// Gap
-// $gap-xl: 80px;
-// $gap-l: 64px;
-// $gap-m: 32px;
-// $gap-s: 24px;
-// $gap-xs: 16px;
+$mb-fnt-sz-xl: 2.5em;
+$mb-fnt-sz-l: 2em;
+$mb-fnt-sz-m: 1.2em;
+$mb-fnt-sz-normal: 1em;
+$mb-fnt-sz-small: .6em;
+$mb-fnt-sz-xsmall: .5em;
 
 // Estilos Generales
 body {
     background-color: $black;
     box-sizing: border-box;
     font-family: $outfit-font;
-    margin: $marg-0;
 }
 
 /* Estilos de textos */
@@ -135,6 +110,27 @@ p {
     margin-bottom: $marg-s;
 }
 
+footer p {
+    font-family: $outfit-font;
+    color: $black;
+    font-weight: $fnt-w-reg;
+    font-size: $fnt-sz-normal;
+    margin-bottom: $marg-s;
+}
+
+a {
+    color: $blue;
+}
+a:hover {
+    color: $orange;
+}
+a:focus {
+    color: $orange;
+}
+a:active {
+    color: $gray;
+}
+
 /* Nav */
 nav {
     background-color: $white;
@@ -194,7 +190,7 @@ nav a:active {
 }
 
 .nav-search {
-    border-radius: $border-radius-xl;
+    border-radius: $radius-xl;
     background: $softgray;
     margin: $marg-s;
     padding: $pad-s;
@@ -205,7 +201,7 @@ nav a:active {
 }
 
 .nav-search_ext {
-    border-radius: $border-radius-xl;
+    border-radius: $radius-xl;
     background: $softgray;
     width: 252px;
     height: 50px;
@@ -262,7 +258,7 @@ nav a:active {
 
 .search-input {
     background: $softgray;
-    border-radius: $border-radius-xl;
+    border-radius: $radius-xl;
     color: $blue;
     font-size: $fnt-sz-normal;
     margin: $marg-s;
@@ -280,7 +276,7 @@ nav button {
 
 button {
     background: $blue;
-    border-radius: $border-radius-xl;
+    border-radius: $radius-xl;
     color: $white;
     font-family: $outfit-font;
     font-weight: $fnt-w-bold;
@@ -292,60 +288,42 @@ button {
     width: min-content;
 }
 
-.category-slider {
-    margin-bottom: $marg-m;
-    padding: $pad-m;
+// Buttons
+.btn-primary {
+    --bs-btn-color: $white;
+    --bs-btn-bg: $blue;
+    --bs-btn-border-color: $blue;
+    --bs-btn-hover-color: $white;
+    --bs-btn-hover-bg: $orange;
+    --bs-btn-hover-border-color: none;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: $gray;
+    --bs-btn-active-border-color: none;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: $white;
+    --bs-btn-disabled-bg: $softgray;
+    --bs-btn-disabled-border-color: none;
 }
 
 .result-container {
-    background-color: $softgray;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: center;
-    gap: $gap-m;
+    background-color: $info;
 }
 
 .category-slider {
     display: flex;
     flex-direction: column;
-    margin-bottom: $marg-m;
 }
 
 .category-card {
     background-color: $softgray;
-    // border: 1px solid $softgray;
-    border-radius: $border-radius-m;
-    margin: $marg-s;
-    padding: $pad-s;
+    border: 1px solid $white;
 }
 
 /* Footer */
 footer {
-    background-color: $gray;
-    color: $white;
-    padding: $pad-s $pad-0;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.footer-section {
-    max-width: 30vw;
-}
-
-.footer-section h5 {
-    font-size: $fnt-sz-normal;
-    margin-bottom: $marg-s;
-}
-
-.footer-section a {
-    display: block;
-    color: $white;
-    text-decoration: none;
-    margin-bottom: $marg-s;
+    background-color: $softgray;
+    color: $black;
 }
 
 // Media Query iPad Pro 11
@@ -366,104 +344,11 @@ only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-we
         margin-bottom: $marg-s;
     }
 
-    /* Nav */
-    nav {
-        background-color: $white;
-        color: $black;
-        font-family: $outfit-font;
-        font-size: $mb-fnt-sz-normal;
-        padding: $pad-s;
-        text-align: center;
-        // top: 155px;
-        width: 100vw;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
     .navbar-logo {
         width: 20vw;
         padding: 2%;
     }
 
-    nav a {
-        color: $nav-a;
-        font-family: $outfit-font;
-        font-size: $mb-fnt-sz-normal;
-        margin: $marg-0 $marg-s;
-        text-decoration: none;
-    }
-
-    .nav-titles {
-        padding: $pad-0 $pad-s;
-        gap: $gap-s;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .nav-search {
-        border-radius: $border-radius-xl;
-        background: $softgray;
-        margin: $marg-s;
-        padding: $pad-s;
-        width: 50px;
-        height: 50px;
-        flex-shrink: 0;
-        box-sizing: border-box;
-    }
-
-    .nav-search_ext {
-        border-radius: $border-radius-xl;
-        background: $softgray;
-        width: 252px;
-        height: 50px;
-        flex-shrink: 0;
-    }
-
-    .navbar-container {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-
-    .navbar-categories {
-        position: relative;
-        display: inline-block;
-    }
-
-    .navbar-categories-content {
-        background-color: $gray;
-        display: none;
-        position: absolute;
-        background-color: #333;
-        min-width: 80vw;
-        z-index: 1;
-    }
-
-    .navbar-categories-content a {
-        color: $white;
-        padding: $pad-s;
-        display: block;
-        text-decoration: none;
-    }
-
-    .navbar-categories:hover .navbar-categories-content {
-        display: block;
-    }
-
-    main {
-        max-width: 80vh;
-        margin: $marg-m auto;
-        padding: $pad-m;
-    }
 }
 
 // Media Query iPhone 13

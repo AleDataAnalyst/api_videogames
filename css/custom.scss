@@ -11,15 +11,15 @@ $secondary: #FA7C1F;
 $success: #5E5E5E;
 $info: #EFEFEF;
 $light: #FFF;
-$dark: #011111;
+$dark: #212b33;
 
 // Botones
-$btn-primary: #003CD7;
+// $btn-primary: #003CD7;
 $btn-secondary: #FA7C1F;
 $btn-success: #5E5E5E;
 $btn-info: #EFEFEF;
 $btn-light: #FFF;
-$btn-dark: #011111;
+$btn-dark: #212b33;
 
 // Compilar Bootstrap con las nuevas variables
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
