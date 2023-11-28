@@ -1,4 +1,27 @@
-// Variables
+// custom.scss
+// npm run compile-sass para compilar
+// sass --watch ./css/style.scss:./css/style.css para visualizar
+
+// Excluir Bootstrap
+$bootstrap-exclude: true;
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Estilos personalizados aquí
+//Colores
+$primary: #003CD7;
+$secondary: #FA7C1F;
+$success: #5E5E5E;
+$info: #EFEFEF;
+$light: #FFF;
+$dark: #212b33;
+
+// Botones
+$btn-primary: #003CD7;
+$btn-secondary: #FA7C1F;
+$btn-success: #5E5E5E;
+$btn-info: #EFEFEF;
+$btn-light: #FFF;
+$btn-dark: #212b33;
 
 // Colores
 $blue: #003CD7;
@@ -64,7 +87,6 @@ h1 {
     color: $blue;
     font-weight: $fnt-w-xb;
     font-size: $fnt-sz-xl;
-    margin-bottom: $marg-s;
     line-height: 1.2em;
     text-align: center;
 }
@@ -74,7 +96,6 @@ h2 {
     font-weight: $fnt-w-bold;
     font-size: $fnt-sz-l;
     line-height: 1em;
-    margin-bottom: $marg-s;
     text-align: center;
 }
 
@@ -102,20 +123,11 @@ h6 {
     font-size: $fnt-sz-normal;
 }
 
-p {
+main p {
     font-family: $outfit-font;
     color: $white;
     font-weight: $fnt-w-reg;
     font-size: $fnt-sz-normal;
-    margin-bottom: $marg-s;
-}
-
-footer p {
-    font-family: $outfit-font;
-    color: $black;
-    font-weight: $fnt-w-reg;
-    font-size: $fnt-sz-normal;
-    margin-bottom: $marg-s;
 }
 
 a {
@@ -137,7 +149,6 @@ nav {
     color: $black;
     font-family: $outfit-font;
     font-size: $fnt-sz-normal;
-    padding: $pad-s;
     text-align: center;
     // top: 155px;
     width: 100vw;
@@ -158,42 +169,25 @@ nav a {
     color: $nav-a;
     font-family: $outfit-font;
     font-size: $fnt-sz-normal;
-    margin: $marg-0 $marg-s;
     text-decoration: none;
 }
 
 nav a:hover {
     color: $nav-a-hvr;
 }
-
 nav a:focus {
     color: $nav-a-focus;
 }
-
 nav a:active {
     color: $nav-a-active;
 }
-
 nav a:active {
     color: $nav-a-visited;
-}
-
-.nav-titles {
-    padding: $pad-0 $pad-s $pad-0 $pad-0;
-    gap: $gap-l;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .nav-search {
     border-radius: $radius-xl;
     background: $softgray;
-    margin: $marg-s;
-    padding: $pad-s;
     width: 50px;
     height: 50px;
     flex-shrink: 0;
@@ -230,7 +224,6 @@ nav a:active {
 
 .navbar-categories-content a {
     color: $white;
-    padding: $pad-s;
     display: block;
     text-decoration: none;
 }
@@ -241,12 +234,9 @@ nav a:active {
 
 // main {
 //     max-width: 80vw;
-//     margin: $marg-m auto;
-//     padding: $pad-m;
 // }
 
 // .search-bar {
-//     margin-bottom: $marg-s;
 //     display: flex;
 //     align-items: center;
 //     flex-direction: column;
@@ -261,15 +251,12 @@ nav a:active {
     border-radius: $radius-xl;
     color: $blue;
     font-size: $fnt-sz-normal;
-    margin: $marg-s;
-    padding: $pad-s;
-    width: 50vw;
-    height: 40px;
+    width: 70vw;
+    height: 60px;
 }
 
 nav button {
     font-size: $fnt-sz-normal;
-    padding: $pad-m;
     min-width: 10vw;
     width: min-content;
 }
@@ -281,7 +268,6 @@ button {
     font-family: $outfit-font;
     font-weight: $fnt-w-bold;
     font-size: $fnt-sz-normal;
-    padding: $pad-m;
     border: none;
     cursor: pointer;
     min-width: 20vw;
@@ -323,7 +309,19 @@ button {
 /* Footer */
 footer {
     background-color: $softgray;
-    color: $black;
+}
+
+footer .footer-content p {
+    color: $black !important;
+    font-weight: $fnt-w-reg;
+    font-size: $fnt-sz-normal;
+}
+
+footer .footer-content a {
+    color: $blue;
+}
+footer .footer-content a:hover {
+    color: $orange;
 }
 
 // Media Query iPad Pro 11
@@ -334,14 +332,12 @@ only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-we
     h1 {
         font-weight: $fnt-w-bold;
         font-size: $mb-fnt-sz-l;
-        margin-bottom: $marg-s;
     }
     
     h2 {
         color: $orange;
         font-weight: $fnt-w-bold;
         font-size: $mb-fnt-sz-m;
-        margin-bottom: $marg-s;
     }
 
     .navbar-logo {
@@ -351,9 +347,8 @@ only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-we
 
 }
 
-// Media Query iPhone 13
-@media only screen and (min-device-width: 390px) and (max-device-width: 390px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait),
-only screen and (min-device-width: 844px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-    // Estilos iPhone 13 debajo
 
-}
+// Compilar Bootstrap con las nuevas variables
+// Excluir Bootstrap
+// $bootstrap-exclude: true;
+// @import '../node_modules/bootstrap/scss/bootstrap.scss';
