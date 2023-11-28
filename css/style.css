@@ -1,5 +1,5 @@
 body {
-  background-color: #011111;
+  background-color: #212b33;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
   margin: 0px;
@@ -68,7 +68,7 @@ p {
 /* Nav */
 nav {
   background-color: #FFF;
-  color: #011111;
+  color: #212b33;
   font-family: "Outfit", sans-serif;
   font-size: 1.1em;
   padding: 16px;
@@ -88,7 +88,7 @@ nav {
 }
 
 nav a {
-  color: #011111;
+  color: #212b33;
   font-family: "Outfit", sans-serif;
   font-size: 1.1em;
   margin: 0px 16px;
@@ -291,7 +291,7 @@ footer {
   /* Nav */
   nav {
     background-color: #FFF;
-    color: #011111;
+    color: #212b33;
     font-family: "Outfit", sans-serif;
     font-size: 1em;
     padding: 16px;
@@ -309,7 +309,7 @@ footer {
     padding: 2%;
   }
   nav a {
-    color: #011111;
+    color: #212b33;
     font-family: "Outfit", sans-serif;
     font-size: 1em;
     margin: 0px 16px;
