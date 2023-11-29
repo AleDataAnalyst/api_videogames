@@ -19,6 +19,20 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="js-preloader" class="js-preloader loaded">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Custom CSS -->
     <nav class="navbar navbar-expand-md navbar-expand-lg bg-body-tertiary sticky-top py-2 py-md-3">
         <div class="container-fluid py-2 py-md-3">
             <a class="navbar-brand" href="#">
@@ -64,7 +78,7 @@
         <section id="buscar" class="container justify-content-center align-items-center p3">
             <div class="row justify-content-center align-items-center g-2">
                 <h1>Buscador de Juegos</h1>
-                <h2>A partir de la API RAWG</h2>
+                <h2>Fetch API RAWG</h2>
                 <div class="d-flex justify-content-center align-items-center flex-column my-2">
                     <input type="text" id="searchInput" class="search-input rounded radius-xl m-3"
                         placeholder="Buscar por nombre de juego">
@@ -80,36 +94,41 @@
         <!-- Slider de Categorías -->
         <section class="container my-5 p-5">
             <div class="row justify-content-center align-items-center mx-1 my-2 p-1">
-                <div class="col">
+                <div class="col-lg-12">
                     <h3 class="text-center">Juegos</h3>
-                    <div id="juegos" class="category-card" onclick="filtrarPorJuegos('games')">Juegos</div>
+                    <div id="juegos" class="gameList category-card" onclick="filtrarPorJuegos('games')">
+                        Listado de Juegos
+                    </div>
+                    <div class="btn-cargarmas hidden">
+                        <a href="javascript:void(0)">Cargar más juegos</a>
+                    </div>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center mx-1 my-5 p-1">
-                <div class="col">
+                <div class="col-lg-12">
                     <h3 class="text-center">Géneros</h3>
                     <div id="generos" class="category-card" onclick="filtrarPorGeneros('genres')">Géneros</div>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center mx-1 my-5 p-1">
-                <div class="col">
+                <div class="col-lg-12">
                     <h3 class="text-center">Plataformas</h3>
                     <div id="plataformas" class="category-card" onclick="filtrarPorPlataformas('platforms')">Plataformas</div>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center mx-1 my-5 p-1">
-                <div class="col">
+                <div class="col-lg-12">
                     <h3 class="text-center">Editores</h3>
                     <div id="editores" class="category-card" onclick="filtrarPorEditores('publishers')">Editoriales</div>
                 </div>
             <div class="row justify-content-center align-items-center mx-1 my-5 p-1">
-                <div class="col">
+                <div class="col-lg-12">
                     <h3 class="text-center">Creadores</h3>
                     <div id="creadores" class="category-card" onclick="filtrarPorCreadores('creators')">Creadores</div>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center mx-1 my-5 p-1">
-                <div class="col">
+                <div class="col-lg-12">
                     <h3 class="text-center">Desarrolladores</h3>
                     <div id="creadores" class="category-card" onclick="filtrarPorDesarrolladores('creators')">Creadores</div>
                 </div>
@@ -158,6 +177,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+    <!-- Cargar scripts -->
+    <script src="./js/prod.env.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
