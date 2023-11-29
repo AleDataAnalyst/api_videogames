@@ -3,7 +3,7 @@ const { JSDOM } = require('jsdom');
 const fs = require('fs');
 
 // Leer HTML
-const html = fs.readFileSync("index.html", 'utf-8');
+const html = fs.readFileSync("./index.html", 'utf-8');
 
 // Crear instancia JSDOM con contenido HTML
 const dom = new JSDOM(html);
