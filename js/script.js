@@ -13,9 +13,6 @@ const dom = new JSDOM(html);
 const document = dom.window.document;
 const window = dom.window;
 
-// Acceder a las variables globales como apiKey
-const apiKey = window.apiKey; // Ajustar acorde a la variable global
-
 console.log("Before getting element");
 const loaderEl = document.getElementById("js-preloader");
 console.log("After getting element");
