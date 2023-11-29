@@ -71,7 +71,7 @@
                 </form>
             </div>
         </div>
-    </nav>    
+    </nav>
 
     <main class="container-fluid">
         <!-- Buscador de Juegos -->
@@ -82,7 +82,8 @@
                 <div class="d-flex justify-content-center align-items-center flex-column my-2">
                     <input type="text" id="searchInput" class="search-input rounded radius-xl m-3"
                         placeholder="Buscar por nombre de juego">
-                    <button class="btn btn-primary btn-lg mb-5 bs-border-radius-pill" onclick="buscarJuegos()">Buscar</button>
+                    <button class="btn btn-primary btn-lg mb-5 bs-border-radius-pill"
+                        onclick="buscarJuegos()">Buscar</button>
                 </div>
             </div>
             <!-- Contenedor de Resultados de Buscador-->
@@ -94,14 +95,12 @@
         <!-- Slider de Juegos -->
         <section class="container my-5 p-5">
             <div class="row justify-content-center align-items-center mx-1 my-2 p-1">
-                <div class="col-lg-12">
-                    <h3 class="text-center">Juegos</h3>
-                    <div id="juegos" class="gameList category-card" onclick="filtrarPorJuegos('games')">
-                        Listado de Juegos
-                    </div>
-                    <div class="btn-cargarmas hidden">
-                        <a href="javascript:void(0)">Cargar más juegos</a>
-                    </div>
+                <h3 class="text-center">Juegos</h3>
+                <div id="juegos" class="juegoList category-card" onclick="filtrarPorJuegos('games')">
+                    Listado de Juegos
+                </div>
+                <div class="btn-cargarmas hidden">
+                    <a href="javascript:void(0)">Cargar más juegos</a>
                 </div>
             </div>
         </section>
