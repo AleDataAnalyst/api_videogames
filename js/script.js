@@ -1,4 +1,3 @@
-
 const apiKey = 'eefbd8dac0b744f5b0cc9f499d593e49';
 
 // Función para obtener información de plataformas
