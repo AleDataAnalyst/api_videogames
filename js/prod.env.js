@@ -2,5 +2,5 @@
 // https://api.rawg.io/docs
 // https://rawg.io/apidocs
 // https://rawg.io/@criptol/apikey
-window.apiKey = "eefbd8dac0b744f5b0cc9f499d593e49";
+const apiKey = "eefbd8dac0b744f5b0cc9f499d593e49";
 
