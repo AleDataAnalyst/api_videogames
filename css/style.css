@@ -12071,9 +12071,27 @@ button {
   border: 1px solid #FFF;
   min-width: fit-content;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  gap: 2rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  align-items: stretch;
+}
+.category-cards .card {
+  background-color: #FFF;
+  border-radius: 24px;
+  min-width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.category-cards .card .card-image {
+  border-radius: 24px;
+}
+.category-cards .card .card-text {
+  color: #212b33;
 }
 
 .btn-cargarmas {

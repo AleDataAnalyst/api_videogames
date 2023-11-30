@@ -139,7 +139,8 @@ $nav-a-visited: #5E5E5E;
 $radius-xl: 100px;
 $radius-l: 80px;
 $radius-m: 64px;
-$radius-s: 16px;
+$radius-s: 24px;
+$radius-xs: 16px;
 
 // Fuentes
 $outfit-font: 'Outfit', sans-serif;
@@ -380,13 +381,34 @@ button {
 }
 
 .category-cards {
-    background-color: $softgray;
-    border: 1px solid $white;
+    background-color: #EFEFEF;
+    border: 1px solid #FFF;
     min-width: fit-content;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    gap: 2rem;
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    align-items: stretch;
+ 
+    .card {
+        background-color: $white;
+        border-radius: $radius-s;
+        min-width: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: .5rem;
+
+        .card-image {
+            border-radius: $radius-s;
+        }
+
+        .card-text {
+            color: $black;
+        }
+    }
 }
 
 .btn-cargarmas {
