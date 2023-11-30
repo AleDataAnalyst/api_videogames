@@ -11885,7 +11885,6 @@ h1, .h1 {
   font-weight: 900;
   font-size: 3.6em;
   line-height: 1.2em;
-  text-align: center;
 }
 
 h2, .h2 {
@@ -11893,7 +11892,6 @@ h2, .h2 {
   font-weight: 700;
   font-size: 2.5em;
   line-height: 1em;
-  text-align: center;
 }
 
 h3, .h3 {
@@ -12045,7 +12043,7 @@ nav a:active {
 
 nav button {
   font-size: 1.1em;
-  min-width: 10vw;
+  min-width: 15vw;
   width: min-content;
 }
 
@@ -12064,16 +12062,23 @@ button {
 
 .result-container {
   background-color: #EFEFEF;
+  min-width: 80vw;
+  height: fit-content;
 }
 
-.category-slider {
-  display: flex;
-  flex-direction: column;
-}
-
-.category-card {
+.category-cards {
   background-color: #EFEFEF;
   border: 1px solid #FFF;
+  min-width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.btn-cargarmas {
+  text-align: center;
+  font-size: 1.5em;
 }
 
 /* Footer */

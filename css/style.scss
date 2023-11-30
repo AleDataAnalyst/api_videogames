@@ -69,17 +69,17 @@ $bs-danger-border-subtle: #f1aeb5;
 $bs-light-border-subtle: #e9ecef;
 $bs-dark-border-subtle: #adb5bd;
 
-// Your font
+// Fuente
 $outfit-font: 'Outfit', sans-serif;
 
-// Your custom font variables
+// Variables de fuente customizadas sobre Bootstrap
 $bs-font-sans-serif: system-ui, -apple-system, "#{$outfit-font}", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-// Your gradient
+// Degradado
 $bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 
-// Your body styles
+// Estilos personalizados a partir de Bootstrap
 $bs-body-font-family: var(--bs-font-sans-serif);
 $bs-body-color: #212529;
 $bs-body-color-rgb: 33, 37, 41;
@@ -185,7 +185,6 @@ h1 {
     font-weight: $fnt-w-xb;
     font-size: $fnt-sz-xl;
     line-height: 1.2em;
-    text-align: center;
 }
 
 h2 {
@@ -193,7 +192,6 @@ h2 {
     font-weight: $fnt-w-bold;
     font-size: $fnt-sz-l;
     line-height: 1em;
-    text-align: center;
 }
 
 h3 {
@@ -329,20 +327,6 @@ nav a:active {
     display: block;
 }
 
-// main {
-//     max-width: 80vw;
-// }
-
-// .search-bar {
-//     display: flex;
-//     align-items: center;
-//     flex-direction: column;
-//     flex-wrap: nowrap;
-//     align-content: center;
-//     justify-content: space-around;
-//     gap: $gap-s;
-// }
-
 .search-input {
     background: $softgray;
     border-radius: $radius-xl;
@@ -354,7 +338,7 @@ nav a:active {
 
 nav button {
     font-size: $fnt-sz-normal;
-    min-width: 10vw;
+    min-width: 15vw;
     width: min-content;
 }
 
@@ -391,16 +375,23 @@ button {
 
 .result-container {
     background-color: $softgray;
+    min-width: 80vw;
+    height: fit-content;
 }
 
-.category-slider {
-    display: flex;
-    flex-direction: column;
-}
-
-.category-card {
+.category-cards {
     background-color: $softgray;
     border: 1px solid $white;
+    min-width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.btn-cargarmas {
+    text-align: center;
+    font-size: $fnt-sz-m;
 }
 
 /* Footer */
