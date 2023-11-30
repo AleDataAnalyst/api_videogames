@@ -150,16 +150,16 @@ $fnt-w-reg: 400;
 $fnt-w-bold: 700;
 $fnt-w-xb: 900;
 // Tamaños de Fuentes
-$fnt-sz-xl: 3.6em;
-$fnt-sz-l: 2.5em;
-$fnt-sz-m: 1.5em;
+$fnt-sz-xl: 3.4em;
+$fnt-sz-l: 2.2em;
+$fnt-sz-m: 1.3em;
 $fnt-sz-normal: 1.1em;
 $fnt-sz-small: .8em;
 $fnt-sz-xsmall: .6em;
 // Tamaños de Fuentes para Móvil
-$mb-fnt-sz-xl: 2.5em;
-$mb-fnt-sz-l: 2em;
-$mb-fnt-sz-m: 1.2em;
+$mb-fnt-sz-xl: 2em;
+$mb-fnt-sz-l: 1.5em;
+$mb-fnt-sz-m: 1.1em;
 $mb-fnt-sz-normal: 1em;
 $mb-fnt-sz-small: .6em;
 $mb-fnt-sz-xsmall: .5em;
@@ -299,6 +299,7 @@ nav a:active {
 }
 
 .navbar-container {
+    background-color: $softgray;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -381,33 +382,65 @@ button {
 }
 
 .category-cards {
-    background-color: #EFEFEF;
-    border: 1px solid #FFF;
+    background-color: #efefef;
+    border: 1px solid #fff;
     min-width: fit-content;
+    margin: 0 auto; /* Centrar contenedor horizontalmente */
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;
     align-content: space-around;
     align-items: stretch;
- 
-    .card {
-        background-color: $white;
+}
+
+.category-cards .card {
+    background-color: #fff;
+    border-radius: $radius-s;
+    width: 32%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem; /* Add margin for spacing between cards */
+
+    img {
         border-radius: $radius-s;
-        min-width: fit-content;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        gap: .5rem;
+        width: 100%;
+        height: auto;
+        margin: 0 auto; /* Centrar imagen */
+    }
 
-        .card-image {
-            border-radius: $radius-s;
-        }
+    .card-title {
+        color: $blue;
+        font-size: $mb-fnt-sz-l;
+    }
 
-        .card-text {
-            color: $black;
+    .card-text {
+        color: $black;
+        font-size: $fnt-sz-m;
+
+        span {
+            color: $orange;
         }
+    }
+}
+
+@media (max-width: 767px) {
+    /* Mobile: 1 card por row */
+    .category-cards .card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Tablet: 2 cards por row */
+    .category-cards .card {
+        width: 48%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Medium devices: 3 cards por row */
+    .category-cards .card {
+        width: 30%;
     }
 }
 

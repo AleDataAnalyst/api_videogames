@@ -6,11 +6,11 @@ function printGames(data) {
                 <img src="${data[i].background_image}" class="card-img" alt="Juego">
                 <div class="card-body">
                     <h5 class="card-title">${data[i].name}</h5>
-                    <p class="card-text">${getGenres(data[i].genres)}</p>
-                    <p class="card-text">${getRatings(data[i].ratings)}</p>
-                    <p class="card-text">${data[i].description}</p>
-                    <p class="card-text">${data[i].released}</p>
-                    <a href="${data[i].website}" class="btn btn-primary text-center">${data[i].website}</a>
+                    <p class="card-text">Género: <span>${getGenres(data[i].genres)}</span></p>
+                    <p class="card-text">Calificación: <span>${getRatings(data[i].ratings)}</span></p>
+                    <p class="card-text">Descripción: <span>${data[i].description}</span></p>
+                    <p class="card-text">Fecha de lanzamiento: <span>${data[i].released}</span></p>
+                    <p class="card-text">Sitio web: <span><a href="${data[i].website}" class="btn text-center">${data[i].website}</a></span></p>
                 </div>
             </div>`;
     }
