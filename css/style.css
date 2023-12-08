@@ -11956,32 +11956,33 @@ nav {
   justify-content: space-evenly;
   align-items: center;
 }
-
-.navbar-logo {
+nav .navbar-logo {
   width: 120px;
   padding: 2%;
 }
-
-nav a {
+nav nav a {
   color: #212b33;
   font-family: "Outfit", sans-serif;
   font-size: 1.1em;
   text-decoration: none;
 }
-
-nav a:hover {
-  color: #003CD7;
+nav .nav-link {
+  color: #212b33;
+  font-size: 1.1em;
 }
-
-nav a:focus {
+nav nav a:hover {
+  color: #003CD7;
+  font-size: 1.3em;
+}
+nav nav a:focus {
   color: #FA7C1F;
+  font-size: 1.3em;
 }
-
-nav a:active {
+nav nav a:active {
   color: #003CD7;
+  font-size: 1.3em;
 }
-
-nav a:active {
+nav nav a:visited {
   color: #5E5E5E;
 }
 
@@ -12031,6 +12032,10 @@ nav a:active {
 
 .navbar-categories:hover .navbar-categories-content {
   display: block;
+}
+
+.navbarNavDropdown {
+  background-color: #EFEFEF;
 }
 
 .search-input {

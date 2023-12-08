@@ -1,18 +1,51 @@
-// Paginación
+// API RAWG
+const apiKey = "eefbd8dac0b744f5b0cc9f499d593e49"; 
 let pagina = 1;
+
+const urlGames = `https://api.rawg.io/api/games?key=${apiKey}&dates=2020-01-01,2023-12-08&ordering=-added&page=${pagina}`;
+
+// Paginación
 const btnAnterior = document.getElementById('btnAnterior');
 const btnSiguiente = document.getElementById('btnSiguiente');
 
 btnSiguiente.addEventListener('click', () => {
-    if(pagina < 10000){
+    // Verificar que haya más resultados antes de incrementar la página
+    if (pagina < 10000 && pagina * 20 < totalResults) {
         pagina += 1;
-        printGames();
+        fetchAndPrintGames();
     }
-})
+});
 
-// API RAWG
-const apiKey = "eefbd8dac0b744f5b0cc9f499d593e49"; 
-const urlGames = `https://api.rawg.io/api/games?key=${apiKey}&dates=2020-01-01,2023-12-08&ordering=-added&language=es-ES&page=${pagina}`;
+btnAnterior.addEventListener('click', () => {
+    if (pagina > 1) {
+        pagina -= 1;
+        fetchAndPrintGames();
+    }
+});
+
+// Función para obtener datos de la API y mostrar juegos
+let totalResults;
+
+function fetchAndPrintGames() {
+    fetch(urlGames)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error HTTP! Estado: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(juegosRecibidosJson => {
+            // Guardar el total de resultados
+            totalResults = juegosRecibidosJson.count;
+            // Limpiar contenido antes de agregar nuevos juegos
+            document.getElementById('gamesCards').innerHTML = '';
+            printGames(juegosRecibidosJson.results);
+        })
+        .catch(error => console.error('Error al buscar juegos:', error));
+}
+
+// Llamada inicial para cargar la primera página
+fetchAndPrintGames();
 
 // Imprimir Juegos
 function printGames(data) {
@@ -58,13 +91,13 @@ function getRatings(ratings) {
 }
 
 console.log('Comprobación antes de fetch');
-fetch(urlGames)
-    .then(response => {
-        if (!response.ok) {
-            console.log('Comprobación después de fetch');
-            throw new Error(`Error HTTP! Estado: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(juegosRecibidosJson => printGames(juegosRecibidosJson.results))
-    .catch(error => console.error('Error al buscar juegos:', error));
+// fetch(urlGames)
+//     .then(response => {
+//         if (!response.ok) {
+//             console.log('Comprobación después de fetch');
+//             throw new Error(`Error HTTP! Estado: ${response.status}`);
+//         }
+//         return response.json();
+//     })
+//     .then(juegosRecibidosJson => printGames(juegosRecibidosJson.results))
+//     .catch(error => console.error('Error al buscar juegos:', error));
