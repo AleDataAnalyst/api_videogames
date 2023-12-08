@@ -254,32 +254,38 @@ nav {
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
+ 
+    .navbar-logo {
+        width: 120px;
+        padding: 2%;
+    }
+    nav a {
+        color: $nav-a;
+        font-family: $outfit-font;
+        font-size: $fnt-sz-normal;
+        text-decoration: none;
+    }
+    .nav-link {
+        color: $nav-a;
+        font-size: $fnt-sz-normal;
+    }
+    nav a:hover {
+        color: $nav-a-hvr;
+        font-size: $fnt-sz-m;
+    }
+    nav a:focus {
+        color: $nav-a-focus;
+        font-size: $fnt-sz-m;
+    }
+    nav a:active {
+        color: $nav-a-active;
+        font-size: $fnt-sz-m;
+    }
+    nav a:visited {
+        color: $nav-a-visited;
+    }
 }
 
-.navbar-logo {
-    width: 120px;
-    padding: 2%;
-}
-
-nav a {
-    color: $nav-a;
-    font-family: $outfit-font;
-    font-size: $fnt-sz-normal;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: $nav-a-hvr;
-}
-nav a:focus {
-    color: $nav-a-focus;
-}
-nav a:active {
-    color: $nav-a-active;
-}
-nav a:active {
-    color: $nav-a-visited;
-}
 
 .nav-search {
     border-radius: $radius-xl;
@@ -327,6 +333,10 @@ nav a:active {
 
 .navbar-categories:hover .navbar-categories-content {
     display: block;
+}
+
+.navbarNavDropdown {
+    background-color: $softgray;
 }
 
 .search-input {

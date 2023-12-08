@@ -4,7 +4,10 @@ const btnAnterior = document.getElementById('btnAnterior');
 const btnSiguiente = document.getElementById('btnSiguiente');
 
 btnSiguiente.addEventListener('click', () => {
-
+    if(pagina < 10000){
+        pagina += 1;
+        printGames();
+    }
 })
 
 // API RAWG
