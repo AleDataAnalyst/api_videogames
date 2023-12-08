@@ -1,3 +1,17 @@
+// Paginación
+let pagina = 1;
+const btnAnterior = document.getElementById('btnAnterior');
+const btnSiguiente = document.getElementById('btnSiguiente');
+
+btnSiguiente.addEventListener('click', () => {
+
+})
+
+// API RAWG
+const apiKey = "eefbd8dac0b744f5b0cc9f499d593e49"; 
+const urlGames = `https://api.rawg.io/api/games?key=${apiKey}&dates=2020-01-01,2023-12-08&ordering=-added&language=es-ES&page=${pagina}`;
+
+// Imprimir Juegos
 function printGames(data) {
     for (let i in data) {
         let content = document.getElementById('gamesCards');
@@ -16,6 +30,7 @@ function printGames(data) {
     }
 }
 
+// Géneros
 function getGenres(genres) {
     // Revisar si es array
     if (Array.isArray(genres)) {
@@ -27,6 +42,7 @@ function getGenres(genres) {
     }
 }
 
+// Ratings
 function getRatings(ratings) {
     // Revisar si es array
     if (Array.isArray(ratings) && ratings.length > 0) {
@@ -37,9 +53,6 @@ function getRatings(ratings) {
         return 'N/A';
     }
 }
-
-const apiKey = "eefbd8dac0b744f5b0cc9f499d593e49"; 
-const urlGames = `https://api.rawg.io/api/games?key=${apiKey}&dates=2023-01-01,2023-11-29&ordering=-added`;
 
 console.log('Comprobación antes de fetch');
 fetch(urlGames)

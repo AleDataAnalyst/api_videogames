@@ -385,13 +385,13 @@ button {
     background-color: #efefef;
     border: 1px solid #fff;
     min-width: fit-content;
-    margin: 0 auto; /* Centrar contenedor horizontalmente */
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
-    align-content: space-around;
-    align-items: stretch;
+    align-content: center;
+    justify-content: space-between;
 }
 
 .category-cards .card {
@@ -423,6 +423,37 @@ button {
     }
 }
 
+#paginacion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+
+    #btnAnterior, #btnSiguiente {
+        text-align: center;
+        font-size: $fnt-sz-m;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: $softgray;
+
+    .footer-content p {
+    color: $black !important;
+    font-weight: $fnt-w-reg;
+    font-size: $fnt-sz-normal;
+    }
+
+    .footer-content a {
+    color: $blue;
+    }
+    .footer-content a:hover {
+    color: $orange;
+    }
+}
+
 @media (max-width: 767px) {
     /* Mobile: 1 card por row */
     .category-cards .card {
@@ -442,29 +473,6 @@ button {
     .category-cards .card {
         width: 30%;
     }
-}
-
-.btn-cargarmas {
-    text-align: center;
-    font-size: $fnt-sz-m;
-}
-
-/* Footer */
-footer {
-    background-color: $softgray;
-}
-
-footer .footer-content p {
-    color: $black !important;
-    font-weight: $fnt-w-reg;
-    font-size: $fnt-sz-normal;
-}
-
-footer .footer-content a {
-    color: $blue;
-}
-footer .footer-content a:hover {
-    color: $orange;
 }
 
 // Media Query iPad Pro 11
@@ -489,9 +497,3 @@ only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-we
     }
 
 }
-
-
-// Compilar Bootstrap con las nuevas variables
-// Excluir Bootstrap
-// $bootstrap-exclude: true;
-// @import '../node_modules/bootstrap/scss/bootstrap.scss';

@@ -12071,13 +12071,13 @@ button {
   background-color: #efefef;
   border: 1px solid #fff;
   min-width: fit-content;
-  margin: 0 auto; /* Centrar contenedor horizontalmente */
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   gap: 1rem;
   flex-wrap: wrap;
-  align-content: space-around;
-  align-items: stretch;
+  align-content: center;
+  justify-content: space-between;
 }
 
 .category-cards .card {
@@ -12105,6 +12105,34 @@ button {
   color: #FA7C1F;
 }
 
+#paginacion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+#paginacion #btnAnterior, #paginacion #btnSiguiente {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* Footer */
+footer {
+  background-color: #EFEFEF;
+}
+footer .footer-content p {
+  color: #212b33 !important;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+footer .footer-content a {
+  color: #003CD7;
+}
+footer .footer-content a:hover {
+  color: #FA7C1F;
+}
+
 @media (max-width: 767px) {
   /* Mobile: 1 card por row */
   .category-cards .card {
@@ -12123,30 +12151,6 @@ button {
     width: 30%;
   }
 }
-.btn-cargarmas {
-  text-align: center;
-  font-size: 1.3em;
-}
-
-/* Footer */
-footer {
-  background-color: #EFEFEF;
-}
-
-footer .footer-content p {
-  color: #212b33 !important;
-  font-weight: 400;
-  font-size: 1.1em;
-}
-
-footer .footer-content a {
-  color: #003CD7;
-}
-
-footer .footer-content a:hover {
-  color: #FA7C1F;
-}
-
 @media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait), only screen and (min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   h1, .h1 {
     font-weight: 700;
