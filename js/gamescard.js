@@ -48,19 +48,23 @@ function fetchAndPrintGames() {
 fetchAndPrintGames();
 
 // Imprimir Juegos
+// Llamada inicial para cargar la primera página
+fetchAndPrintGames();
+
+// Imprimir Juegos
 function printGames(data) {
-    for (let i in data) {
+    for (const juego of data) {
         let content = document.getElementById('gamesCards');
         content.innerHTML +=
             `<div class="card mb-4 p-3">
-                <img src="${data[i].background_image}" class="card-img" alt="Juego">
+                <img src="${juego.background_image}" class="card-img" alt="Juego">
                 <div class="card-body">
-                    <h5 class="card-title">${data[i].name}</h5>
-                    <p class="card-text">Género: <span>${getGenres(data[i].genres)}</span></p>
-                    <p class="card-text">Calificación: <span>${getRatings(data[i].ratings)}</span></p>
-                    <p class="card-text">Descripción: <span>${data[i].description}</span></p>
-                    <p class="card-text">Fecha de lanzamiento: <span>${data[i].released}</span></p>
-                    <p class="card-text">Sitio web: <span><a href="${data[i].website}" class="btn text-center">${data[i].website}</a></span></p>
+                    <h5 class="card-title">${juego.name}</h5>
+                    <p class="card-text">Género: <span>${getGenres(juego.genres)}</span></p>
+                    <p class="card-text">Calificación: <span>${getRatings(juego.ratings)}</span></p>
+                    <p class="card-text">Descripción: <span>${juego.description}</span></p>
+                    <p class="card-text">Fecha de lanzamiento: <span>${juego.released}</span></p>
+                    <p class="card-text">Sitio web: <span><a href="${juego.website}" class="btn text-center">${juego.website}</a></span></p>
                 </div>
             </div>`;
     }
