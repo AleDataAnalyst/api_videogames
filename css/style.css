@@ -11918,6 +11918,15 @@ h6, .h6 {
   font-size: 1.1em;
 }
 
+.hero {
+  background-color: #EFEFEF;
+  font-family: "Outfit", sans-serif;
+  color: #003CD7;
+  font-weight: 400;
+  font-size: 1.1em;
+  width: 100vh;
+}
+
 main p {
   font-family: "Outfit", sans-serif;
   color: #FFF;

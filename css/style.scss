@@ -219,6 +219,15 @@ h6 {
     font-size: $fnt-sz-normal;
 }
 
+.hero {
+    background-color: $softgray;
+    font-family: $outfit-font;
+    color: $blue;
+    font-weight: $fnt-w-reg;
+    font-size: $mb-fnt-sz-m;
+    width: 100vh;
+}
+
 main p {
     font-family: $outfit-font;
     color: $white;
