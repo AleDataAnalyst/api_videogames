@@ -95,13 +95,3 @@ function getRatings(ratings) {
 }
 
 console.log('Comprobación antes de fetch');
-// fetch(urlGames)
-//     .then(response => {
-//         if (!response.ok) {
-//             console.log('Comprobación después de fetch');
-//             throw new Error(`Error HTTP! Estado: ${response.status}`);
-//         }
-//         return response.json();
-//     })
-//     .then(juegosRecibidosJson => printGames(juegosRecibidosJson.results))
-//     .catch(error => console.error('Error al buscar juegos:', error));

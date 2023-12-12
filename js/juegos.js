@@ -100,10 +100,7 @@ document.getElementById('gamesCards').addEventListener('click', (event) => {
 async function openModal(gameId) {
     try {
         const urlGameDetails = `https://api.rawg.io/api/games/${gameId}?key=${apiKey}`;
-        const urlAchievements = `https://api.rawg.io/api/games/${gameId}/achievements?key=${apiKey}`;
-        const urlScreenshots = `https://api.rawg.io/api/games/${gameId}/screenshots?key=${apiKey}`;
-        const urlTrailers = `https://api.rawg.io/api/games/${gameId}/movies?key=${apiKey}`;
-
+    
         // Fetch game details
         const responseDetails = await fetch(urlGameDetails);
         if (!responseDetails.ok) {
@@ -111,92 +108,19 @@ async function openModal(gameId) {
         }
         const gameDetails = await responseDetails.json();
 
-        // Fetch achievements
-        const responseAchievements = await fetch(urlAchievements);
-        if (!responseAchievements.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseAchievements.status}`);
-        }
-        const achievements = await responseAchievements.json();
-
-        // Fetch screenshots
-        const responseScreenshots = await fetch(urlScreenshots);
-        if (!responseScreenshots.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseScreenshots.status}`);
-        }
-        const screenshots = await responseScreenshots.json();
-
-        // Fetch trailers
-        const responseTrailers = await fetch(urlTrailers);
-        if (!responseTrailers.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseTrailers.status}`);
-        }
-        const trailers = await responseTrailers.json();
-
-        // Mostrar game details, achievements, screenshots y trailers en modal
-        // Personalizar con estructura modal
-        console.log(gameDetails, achievements, screenshots, trailers); // Ver detalles en console de navegador
-        // ...
-
-        // Ejemplo: mostrar una alerta con nombre de juego y descripción
-        alert(`${gameDetails.name}\nDescripción: ${gameDetails.description}`);
-    } catch (error) {
-        console.error('Error al buscar los detalles del juego:', error);
-    }
-}
-
-
-// Función para fetch y mostrar información detallada en un modal
-async function openModal(gameId) {
-    try {
-        const urlGameDetails = `https://api.rawg.io/api/games/${gameId}?key=${apiKey}`;
-        const urlAchievements = `https://api.rawg.io/api/games/${gameId}/achievements?key=${apiKey}`;
-        const urlScreenshots = `https://api.rawg.io/api/games/${gameId}/screenshots?key=${apiKey}`;
-        const urlTrailers = `https://api.rawg.io/api/games/${gameId}/movies?key=${apiKey}`;
-
-        // Fetch game details
-        const responseDetails = await fetch(urlGameDetails);
-        if (!responseDetails.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseDetails.status}`);
-        }
-        const gameDetails = await responseDetails.json();
-
-        // Fetch achievements
-        const responseAchievements = await fetch(urlAchievements);
-        if (!responseAchievements.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseAchievements.status}`);
-        }
-        const achievements = await responseAchievements.json();
-
-        // Fetch screenshots
-        const responseScreenshots = await fetch(urlScreenshots);
-        if (!responseScreenshots.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseScreenshots.status}`);
-        }
-        const screenshots = await responseScreenshots.json();
-
-        // Fetch trailers
-        const responseTrailers = await fetch(urlTrailers);
-        if (!responseTrailers.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseTrailers.status}`);
-        }
-        const trailers = await responseTrailers.json();
-
-        // Mostrar game details, achievements, screenshots, y trailers en modal
+        // Mostrar game details en modal
         const modalContent = `
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header px-4">
                             <h3 class="modal-title fs-5" id="exampleModalLabel">${gameDetails.name}</h3>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <h4>${gameDetails.description}</h4>
-                            <p>Logros: ${JSON.stringify(achievements)}</p>
-                            <p>Imágenes: ${JSON.stringify(screenshots)}</p>
-                            <p>Trailers: ${JSON.stringify(trailers)}</p>
+                        <div class="modal-body px-4">
+                            <p>${gameDetails.description}</p>
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer px-4">
                             <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Cerrar</button>
                             <button type="button" id="btn-web" class="btn btn-primary rounded-pill">
                             <a href="${gameDetails.website}" class="btn text-center" target="_blank">Visitar web</a></button>
@@ -217,47 +141,6 @@ async function openModal(gameId) {
         console.error('Error al buscar los detalles del juego:', error);
     }
 }
-
-// Función para hacer fetch y mostrar información detallada en una nueva página
-async function openGamePage(gameId) {
-    try {
-        const urlGameDetails = `https://api.rawg.io/api/games/${gameId}?key=${apiKey}`;
-        const urlScreenshots = `https://api.rawg.io/api/games/${gameId}/screenshots?key=${apiKey}`;
-        const urlTrailers = `https://api.rawg.io/api/games/${gameId}/movies?key=${apiKey}`;
-
-        // Fetch game details
-        const responseDetails = await fetch(urlGameDetails);
-        if (!responseDetails.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseDetails.status}`);
-        }
-        const gameDetails = await responseDetails.json();
-
-        // Fetch screenshots
-        const responseScreenshots = await fetch(urlScreenshots);
-        if (!responseScreenshots.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseScreenshots.status}`);
-        }
-        const screenshots = await responseScreenshots.json();
-
-        // Fetch trailers
-        const responseTrailers = await fetch(urlTrailers);
-        if (!responseTrailers.ok) {
-            throw new Error(`Error HTTP! Estado: ${responseTrailers.status}`);
-        }
-        const trailers = await responseTrailers.json();
-
-        // Redireccionar a una nueva página
-        window.location.href = `game-page.html?gameId=${gameId}`;
-
-        // Guardar data en una sessionStorage para recuperar en la nueva página (opcional)
-        sessionStorage.setItem('gameDetails', JSON.stringify(gameDetails));
-        sessionStorage.setItem('screenshots', JSON.stringify(screenshots));
-        sessionStorage.setItem('trailers', JSON.stringify(trailers));
-    } catch (error) {
-        console.error('Error al buscar los detalles del juego:', error);
-    }
-}
-
 
 // Buscador
 const searchInput = document.getElementById('searchInput');

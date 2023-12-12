@@ -282,7 +282,6 @@ nav {
     font-family: $outfit-font;
     font-size: $fnt-sz-m;
     text-align: center;
-    // top: 155px;
     width: 100vw;
     height: 120px;
     display: flex;
@@ -361,7 +360,6 @@ nav {
     background-color: $black;
     display: none;
     position: absolute;
-    background-color: #333;
     min-width: 160px;
     z-index: 1;
 }
@@ -451,14 +449,12 @@ button {
     width: 32%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
-    /* Add margin for spacing between cards */
 
     img {
         border-radius: $radius-s;
         width: 100%;
         height: auto;
         margin: 0 auto;
-        /* Centrar imagen */
     }
 
     .card-title {
@@ -474,25 +470,32 @@ button {
             color: $orange;
         }
     }
+
+    // Efecto hover
+    &:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
 }
 
-.modal-header {
-    background-color: $black;
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--bs-modal-header-padding);
-    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
-    border-top-left-radius: var(--bs-modal-inner-border-radius);
-    border-top-right-radius: var(--bs-modal-inner-border-radius);
-    flex-wrap: nowrap;
-    flex-direction: row;
+.modal-content {
+    width: 100vh;
 
-    .modal-title {
-        color: $softgray;
-        margin-bottom: 0;
-        line-height: var(--bs-modal-title-line-height);
+    .modal-header {
+        background-color: $blue;
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    
+        .modal-title {
+            color: $softgray;
+            margin-bottom: 0;
+            line-height: var(--bs-modal-title-line-height);
+        }
     }
 
     .btn-close {
@@ -500,39 +503,38 @@ button {
         width: 1em;
         height: 1em;
         padding: 0.25em 0.25em;
-        color: $softgray;
-        background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
+        background-color: $softgray;
+        color: $white;
         border: 0;
-        border-radius: 0.375rem;
-        opacity: var(--bs-btn-close-opacity);
     }
-}
-
-.modal-body {
-    background-color: $softgray;
-    position: relative;
-    flex: 1 1 auto;
-    padding: var(--bs-modal-padding);
-
-    h3, .h3 {
-        color: $blue;
-        font-weight: 700;
-        font-size: 2em;
+    
+    .modal-body {
+        background-color: $softgray;
+        color: $black;
+        position: relative;
+        flex: 1 1 auto;
+        padding: var(--bs-modal-padding);
+    
+        h3, .h3 {
+            color: $blue;
+            font-weight: 700;
+            font-size: 2em;
+        }
     }
-}
-
-.modal-footer {
-    display: flex;
-    flex-shrink: 0;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-around;
-    padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
-    background-color: $black;
-    border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
-    border-bottom-right-radius: var(--bs-modal-inner-border-radius);
-    border-bottom-left-radius: var(--bs-modal-inner-border-radius);
-    flex-direction: row;
+    
+    .modal-footer {
+        display: flex;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-around;
+        padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
+        background-color: $black;
+        border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
+        border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+        border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+        flex-direction: row;
+    }
 }
 
 #paginacion {
