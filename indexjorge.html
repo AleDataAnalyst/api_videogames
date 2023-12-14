@@ -1,0 +1,183 @@
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <style>
+    #invitaciones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div id="infoModal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button id="closeModalButton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="text-center p-5">Ubicaciones!</h1>
+
+      <div class="container text-center">
+        <div id="ubicaciones" class="row align-items-start"></div>
+      </div>
+
+      <h1 class="text-center p-5">Invitaciones</h1>
+      <div id="invitaciones"></div>
+
+      <h2 class="text-center p-5">Paginación</h1>
+      <div class="container text-center" style="margin: 0 auto; width: 320px">
+        <nav aria-label="...">
+          <ul class="pagination pagination-lg">
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">1</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+          </ul>
+        </nav>
+      </div>
+
+
+      <h2 class="text-center p-5">Formulario de contacto</h1>
+      <div class="container card p-5">
+        <form class="m-3">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </section>
+
+
+
+
+    
+
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script>
+
+    function loadData(x) {
+      fetch('https://cristinamaser.com/api/invitations/'+parseInt(x)+1)
+      .then(response => response.json())
+      .then(responseJson => printModal(responseJson))
+    }
+    function printModal(x) {
+      console.log(x);
+      let myModal = new bootstrap.Modal(document.getElementById('infoModal'));
+      myModal.show();
+      let modalTitleElement = myModal._element.querySelector('.modal-title');
+      let modalBodyElement = myModal._element.querySelector('.modal-body');
+      modalTitleElement.innerHTML = x.name;
+      modalBodyElement.innerHTML = `<div>
+        <img src="https://cristinamaser.com${x.invitationimg[0].src}" class="card-img-top">
+        <br/> <br/>
+        <p>${x.descripcion}</p>
+        ${x.groups.map((g) => `<span class="badge bg-secondary">${g.invitationgroup.nombre}</span>`).join(' ')}
+        </div>`
+      ;
+      document.getElementById('closeModalButton').addEventListener('click', function() {
+        myModal.hide();
+      });
+    }
+
+    function printInvitations(data) {
+      content = document.getElementById('invitaciones')
+      content.innerHTML = '';
+      for (i in data) {
+        content.innerHTML += `<div class="card m-2" style="width: 18rem;">
+          <img src="https://cristinamaser.com${data[i].invitationimg[0].src}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">${data[i].nombre}</h5>
+            <p class="card-text">Description...</p>
+            <a data-value="${i}" href="#" class="btn btn-primary activeModal">Go somewhere</a>
+          </div>
+        </div><br/>`;
+      }
+
+      let linkModales = document.getElementsByClassName('activeModal');
+
+      for(i in linkModales){
+        try {
+          linkModales[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            loadData(e.target.dataset.value)
+          })
+        } catch (error) {
+          console.log(error, i);
+        }
+      }
+    }
+
+    function paginateResults(allResults, pageNumber, perPage) {
+      const startIndex = (pageNumber - 1) * perPage;
+      const endIndex = startIndex + perPage;
+      const pageResults = allResults.slice(startIndex, endIndex);
+      return pageResults;
+    }
+
+    function loadInvitations(pageNumber,perPage) {
+      fetch('https://cristinamaser.com/api/invitations').then(response => response.json())
+      .then(responseJson => printInvitations(paginateResults(responseJson.data, pageNumber, perPage)))
+    }
+
+    loadInvitations(1,10);
+
+    let pages = document.getElementsByClassName('page-link');
+    for (i in pages) {
+      try {
+        pages[i].addEventListener('click', function(e) {
+          e.preventDefault();
+          loadInvitations(e.target.innerHTML, 8);
+          e.target.parentElement.parentElement.querySelector('.active').classList.remove('active');
+          e.target.parentElement.classList.add('active');
+        })
+      } catch (error) {
+        console.log(error, i);
+      }
+    }
+
+    function printUbicaciones(datos) {
+      var ubicaciones = document.getElementById('ubicaciones')
+      for (i in datos) {
+        console.log(datos[i].tel)
+        ubicaciones.innerHTML += 
+        `<div class="col card p-3 m-2">
+          <p><strong> ${i} </strong>${datos[i].nombre}</p>
+          <p>Tel: ${datos[i].tel}</p>
+        </div>`
+      }
+    }
+    fetch('ubicaciones.json')
+    .then(response => response.json())
+    .then(responseJson => printUbicaciones(responseJson.ubicaciones))
+
+
+  </script>
+</html>

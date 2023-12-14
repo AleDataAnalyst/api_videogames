@@ -1,0 +1,26 @@
+{
+  "ubicaciones": [ 
+    {
+      "nombre": "Ubicación 1",
+      "direccion": "123 Avenida Principal, Ciudad A",
+      "tel" : 680345678,
+      "img" :  {
+        "name": "Ubicación 1",
+        "alt": "descripcion de imagen",
+        "src" : "ruta"
+      }
+    },
+    {
+      "nombre": "Ubicación 2",
+      "direccion": "456 Calle Secundaria, Ciudad B",
+      "tel" : 680345676
+    },
+    {
+      "nombre": "Ubicación 3",
+      "direccion": "789 Calle Terciaria, Ciudad C",
+      "tel" : 680345674
+    }
+  ]
+}
+
+
