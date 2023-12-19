@@ -460,6 +460,10 @@ button {
         }
     }
 
+    .fa-star {
+            color:$orange;
+        }
+
     // Efecto hover
     &:hover {
         transform: scale(1.05);

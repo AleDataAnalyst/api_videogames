@@ -1,5 +1,5 @@
 const apiKey = "eefbd8dac0b744f5b0cc9f499d593e49";
-const baseUrl = "https://api.rawg.io/api/games";
+const baseUrl = "https://api.rawg.io/api/creators";
 
 // Función buscar creadores
 async function fetchAndPrintCreators(url) {
@@ -22,9 +22,9 @@ function displayCreators(creators) {
     creators.forEach(creator => {
         creatorsHtml += `
             <div class="creator">
-                <h3>${creator.name}</h3>
-                <img src="${creator.image}" alt="${creator.name}">
-                <p>Games Count: ${creator.games_count}</p>
+                <h4>${creator.name}</h4>
+                <img src="${creator.image}" alt="${creator.name} class="rounded mx-auto d-block creator-img">
+                <p>Juegos creados: ${creator.games_count}</p>
             </div>`;
     });
     document.getElementById('creatorsList').innerHTML = creatorsHtml;

@@ -12130,6 +12130,9 @@ button {
 .category-cards .card .card-text span {
   color: #FA7C1F;
 }
+.category-cards .card .fa-star {
+  color: #FA7C1F;
+}
 .category-cards .card:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
