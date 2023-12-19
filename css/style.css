@@ -12277,3 +12277,40 @@ footer .footer-content a:hover {
     padding: 2%;
   }
 }
+#juego-individual {
+  background-color: #003CD7;
+  justify-content: space-between;
+  height: calc(100vh - 100px);
+  display: flex;
+}
+
+.imagen_juegoindividual {
+  background-color: #FA7C1F;
+  width: 100%;
+}
+
+.informacion_juego {
+  background-color: #203f59;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.datos_juego {
+  color: #003a70;
+  background-color: azure;
+  border-radius: 10px;
+  width: 70%;
+  height: 80%;
+  box-shadow: 0 0 5px gray;
+}
+
+.datos_juego table {
+  font-size: 13px;
+}
+
+.datos_juego table .negrita {
+  font-weight: 700;
+}
