@@ -8,14 +8,14 @@ const btnSiguiente = document.getElementById('btnSiguiente');
 btnSiguiente.addEventListener('click', () => {
     if (pagina < 1000) {
         pagina += 1;
-        cargarJuegos();
+        cargarGeneros();
     }
 });
 
 btnAnterior.addEventListener('click', () => {
     if (pagina > 1) {
         pagina -= 1;
-        cargarJuegos();
+        cargarGeneros();
     }
 });
 
